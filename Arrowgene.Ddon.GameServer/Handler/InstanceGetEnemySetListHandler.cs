@@ -27,11 +27,7 @@ namespace Arrowgene.Ddon.GameServer.Handler
             byte subGroupId = request.Structure.SubGroupId;
             client.Character.Stage = stageId;
 
-   
             List<EnemySpawn> spawns = _enemyManager.GetAssets(stageId, subGroupId);
-            
-            // TODO test
-            // spawns.AddRange(_enemyManager.GetSpawns(new StageId(1,0,15), 0));
 
             S2CInstanceGetEnemySetListRes response = new S2CInstanceGetEnemySetListRes();
             response.LayoutId = stageId.ToStageLayoutId();
@@ -45,6 +41,14 @@ namespace Arrowgene.Ddon.GameServer.Handler
                 enemy.PositionIndex = i;
                 enemy.EnemyInfo = spawn.Enemy;
                 response.EnemyList.Add(enemy);
+            }
+
+            if(response.LayoutId.GroupId == 26) {
+                // Knight's Bitter Enemy
+                response.QuestId = 20005010;
+            } else if(response.LayoutId.GroupId == 2) {
+                // Spirit Dragon
+                response.QuestId = 50300010;
             }
 
             client.Send(response);

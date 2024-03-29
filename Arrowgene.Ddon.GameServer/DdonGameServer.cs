@@ -166,13 +166,6 @@ namespace Arrowgene.Ddon.GameServer
             AddHandler(new AreaGetLeaderAreaReleaseListHandler(this));
 
             AddHandler(new BattleContentInfoListHandler(this));
-            AddHandler(new BazaarGetCharacterListHandler(this));
-            AddHandler(new BazaarGetExhibitPossibleNumHandler(this));
-            AddHandler(new BazaarGetItemHistoryInfoHandler(this));
-            AddHandler(new BazaarGetItemInfoHandler(this));
-            AddHandler(new BazaarGetItemListHandler(this));
-            AddHandler(new BazaarProceedsHandler(this));
-            
             AddHandler(new BinarySaveSetCharacterBinSavedataHandler(this));
             AddHandler(new BlackListGetBlackListHandler(this));
 
@@ -219,12 +212,7 @@ namespace Arrowgene.Ddon.GameServer
             AddHandler(new ContextGetSetContextHandler(this));
             AddHandler(new ContextMasterThrowHandler(this));
             AddHandler(new ContextSetContextHandler(this));
-            AddHandler(new CraftGetCraftIRCollectionValueListHandler(this));
             AddHandler(new CraftGetCraftProgressListHandler(this));
-            AddHandler(new CraftGetCraftSettingHandler(this));
-            AddHandler(new CraftRecipeGetCraftRecipeHandler(this));
-            AddHandler(new CraftStartCraftHandler(this));
-            
             AddHandler(new DailyMissionListGetHandler(this));
 
             AddHandler(new EquipChangeCharacterEquipHandler(this));
@@ -233,9 +221,7 @@ namespace Arrowgene.Ddon.GameServer
             AddHandler(new EquipChangePawnEquipHandler(this));
             AddHandler(new EquipChangePawnEquipJobItemHandler(this));
             AddHandler(new EquipChangePawnStorageEquipHandler(this));
-            AddHandler(new EquipEnhancedGetPacks(this));
             AddHandler(new EquipGetCharacterEquipListHandler(this));
-            AddHandler(new EquipGetCraftLockedElementListHandler(this));
             AddHandler(new EquipUpdateHideCharacterHeadArmorHandler(this));
             AddHandler(new EquipUpdateHideCharacterLanternHandler(this));
             AddHandler(new EquipUpdateHidePawnHeadArmorHandler(this));
@@ -334,7 +320,6 @@ namespace Arrowgene.Ddon.GameServer
             AddHandler(new PawnGetPawnHistoryListHandler(this));
             AddHandler(new PawnGetPawnTotalScoreHandler(this));
             AddHandler(new PawnGetRegisteredPawnDataHandler(this));
-            AddHandler(new PawnGetRentedPawnDataHandler(this));
             AddHandler(new PawnGetRentedPawnListHandler(this));
             AddHandler(new PawnJoinPartyMypawnHandler(this));
             AddHandler(new PawnPawnLostHandler(this));
@@ -362,19 +347,21 @@ namespace Arrowgene.Ddon.GameServer
             AddHandler(new QuestGetSetQuestListHandler(this));
             AddHandler(new QuestGetTutorialQuestListHandler(this));
             AddHandler(new QuestGetWorldManageQuestListHandler(this));
-            AddHandler(new QuestLeaderQuestProgressRequestHandler(this));
+
 			AddHandler(new QuestGetEndContentsGroup(this));
 			AddHandler(new QuestGetCycleContentsNewsList(this));
+            AddHandler(new QuestQuestOrderHandler(this));
             AddHandler(new QuestQuestProgressHandler(this));
             AddHandler(new QuestSendLeaderQuestOrderConditionInfoHandler(this));
             AddHandler(new QuestSendLeaderWaitOrderQuestListHandler(this));
             AddHandler(new QuestSetPriorityQuestHandler(this));
-		
+			
 			AddHandler(new EntryBoardEntryBoardList(this));
 			AddHandler(new EntryBoardEntryBoardItemCreate(this));
 			AddHandler(new EntryBoardEntryBoardItemForceStart(this));
 			AddHandler(new EntryBoardEntryBoardItemInfoMyself(this));
 
+            
             AddHandler(new ServerGameTimeGetBaseinfoHandler(this));
             AddHandler(new ServerGetGameSettingHandler(this));
             AddHandler(new ServerGetRealTimeHandler(this));
